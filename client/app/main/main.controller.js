@@ -1,22 +1,30 @@
 'use strict';
 
 angular.module('randomImgurApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+	.controller('MainCtrl', function ($scope, $http, imgCheck) {
+		$scope.randomImgur = {};
+		$scope.imgCheck = imgCheck;
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
+		$scope.generateURL = function() {
+			var charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789';
+			var generatedString = '';
+			var numArray = [5, 6, 7];
+			var random =  Math.floor(Math.random()*3);
+			var length = numArray[random];
+			for (var i = 0; i < length; i++) {
+				var randomChar = Math.floor(Math.random() * charSet.length);
+				generatedString = generatedString + charSet.substring(randomChar, randomChar + 1);
+			}
+			return generatedString;
+		};
 
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
+		$scope.loadImages = function() {
+			$scope.urlArray = [];	
+			for (var i = 0; i < 100; i ++) {
+				$scope.urlArray[i] = $scope.generateURL();
+			}
+		};
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
-  });
+		$scope.deleteBroken 
+		$scope.loadImages();
+	});
