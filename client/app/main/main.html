@@ -1,5 +1,3 @@
 <div class = "container">
-    <div ng-repeat = "url in urlArray">
-        <img ng-click = "imgCheck.checkWidth(this)" src = "http://i.imgur.com/{{url}}.jpg">
-    </div>
+    <img ng-repeat = "url in urlArray" ng-click = "imgCheck.checkWidth(scope)" src = "http://i.imgur.com/{{url}}.jpg" data = "$index">
 </div><!--container-->

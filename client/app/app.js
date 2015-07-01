@@ -16,17 +16,20 @@ angular.module('randomImgurApp', [
 	})
 	.factory('imgCheck', function($http) {
 		return {
-			checkWidth: function(element) {
-				console.log(this);
-				console.log(element);
-				var width = this.width();
-				console.log(width);
-				if (width === 161) {
-					element.remove();
+			checkWidth: function(scope) {
+				console.log( angular.element('img').length)
+				for (var j = 0; j < 5; j++) {
+					for (var i = 0; i < angular.element('img').length; i++) {
+					var width = angular.element('img')[i].clientWidth;
+					if (width === 161 || width === 24) {
+						angular.element('img')[i].remove();
+					}
+
 				}
-				else {
-					element.width = 300;
 				}
+				
+				
+				
 			},
 			checkBroken: function() {
 
