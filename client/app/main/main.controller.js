@@ -1,9 +1,8 @@
 'use strict';
 
 angular.module('randomImgurApp')
-	.controller('MainCtrl', function ($scope, $http, imgCheck) {
+	.controller('MainCtrl', function ($scope, $http) {
 		$scope.randomImgur = {};
-		$scope.imgCheck = imgCheck;
 
 		$scope.generateURL = function() {
 			var charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789';
@@ -27,4 +26,19 @@ angular.module('randomImgurApp')
 
 		$scope.deleteBroken 
 		$scope.loadImages();
+
+		$scope.imgtest = function() {
+			console.log( angular.element('img').length)
+		for (var j = 0; j < 5; j++) {
+			for (var i = 0; i < angular.element('img').length; i++) {
+				var width = angular.element('img')[i].clientWidth;
+				if (width === 161 || width === 24) {
+					angular.element('img')[i].remove();
+				}
+				else {
+					$scope.setWidth = {'width': '300px'};
+				}
+			}
+		}
+		}
 	});
