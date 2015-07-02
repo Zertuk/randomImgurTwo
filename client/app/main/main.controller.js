@@ -9,7 +9,7 @@ angular.module('randomImgurApp')
 			var generatedString = '';
 			var numArray = [5, 6, 7];
 			var random =  Math.floor(Math.random()*3);
-			var length = numArray[random];
+			var length = 5;
 			for (var i = 0; i < length; i++) {
 				var randomChar = Math.floor(Math.random() * charSet.length);
 				generatedString = generatedString + charSet.substring(randomChar, randomChar + 1);
@@ -29,16 +29,14 @@ angular.module('randomImgurApp')
 
 		$scope.imgtest = function() {
 			console.log( angular.element('img').length)
-		for (var j = 0; j < 5; j++) {
 			for (var i = 0; i < angular.element('img').length; i++) {
 				var width = angular.element('img')[i].clientWidth;
-				if (width === 161 || width === 24) {
+				if (width === 161 || width === 162 || width === 24) {
 					angular.element('img')[i].remove();
 				}
 				else {
-					$scope.setWidth = {'width': '300px'};
+					console.log(angular.element('img')[i]);
 				}
 			}
-		}
 		}
 	});
