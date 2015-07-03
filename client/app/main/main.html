@@ -1,6 +1,6 @@
 <div class = "container">
-    <div ng-repeat = "url in urlArray">
-        <img hide-until-good ng-style = "setWidth" ng-click = "imgtest()" src = "http://i.imgur.com/{{url}}.jpg" ng-repeat = "url in urlArray">
-        <div class = "fav" data = "{{url}}"></div>
+    <div class = "imgwrap three columns" ng-repeat = "url in urlArray">
+        <img hide-until-good ng-style = "setWidth" ng-click = "imgtest()" src = "http://i.imgur.com/{{url}}.jpg">
+        <i class="fa fa-heart fa-3x fav" data = "{{url}}"></i>
     </div>
 </div><!--container-->

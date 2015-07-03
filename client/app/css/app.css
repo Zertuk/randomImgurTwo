@@ -33,7 +33,19 @@ nav ul li a:hover {
 
 
 img {
-	float: left;
-	margin-left: 2%;
+	max-width: 100%;
+}
+
+.imgwrap {
+
+}
+
+i {
+	cursor: pointer;
+	display: block;
+}
+
+i:hover {
+	color: red;
 }
 
