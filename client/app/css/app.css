@@ -1,5 +1,9 @@
 /* GERERAL */
 
+div, img {
+	box-sizing: border-box;
+}
+
 body {
 	background: #383838;
 }
@@ -37,15 +41,30 @@ img {
 }
 
 .imgwrap {
-
+	height: 400px;
+	margin-top: 40px;
+	float: left;
+	width: 23%;
+	margin-right: 2%;
 }
 
-i {
-	cursor: pointer;
+.imgwrap a {
+}
+
+.imgwrap img {
+	max-height: 350px;
+	width: auto;
+	margin: 0 auto;
+}
+
+.imgwrap i.fa-heart {
 	display: block;
+	cursor: pointer;
 }
 
 i:hover {
 	color: red;
 }
+
+
 
