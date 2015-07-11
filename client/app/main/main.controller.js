@@ -4,6 +4,7 @@ angular.module('randomImgurApp')
 	.controller('MainCtrl', function ($scope, $http) {
 		$scope.randomImgur = {};
 		$scope.imageArray = [];
+		$scope.removed = 0;
 
 		$scope.generateURL = function() {
 			var charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz123456789';
@@ -31,6 +32,7 @@ angular.module('randomImgurApp')
 				console.log(width);
 				if (width === 161 || width === 24 || width === 162) {
 					$scope.testImage();
+					$scope.removed = $scope.removed + 1;
 				}
 				else {
 					$scope.imageArray.push(test.src)
