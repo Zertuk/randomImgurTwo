@@ -1,3 +1,4 @@
+
 <div class = "container">
 	<div class = "row">
 		<div ng-repeat = "url in imageArray" class = "imgwrap">
@@ -5,6 +6,10 @@
 				<img imageonload src = "{{url}}">
 			</a>
 			<i class="fa fa-heart fa-3x fav" data = "{{url}}"></i>
+			<p>#{{$index + 1}}</p>
 		</div><!--imgwrap three columns-->
 	</div><!--row-->
+	<div class = "row loading">
+		<p>~ Loading More ~</p>
+		<img src = "../../assets/images/loading.gif">
 </div><!--container-->
