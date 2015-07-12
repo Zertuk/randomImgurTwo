@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('randomImgurApp')
-	.controller('MainCtrl', function ($scope, $http) {
+	.controller('MainCtrl', function ($scope, $http, $window) {
 		$scope.randomImgur = {};
 		$scope.imageArray = [];
 		$scope.removed = 0;
@@ -19,7 +19,7 @@ angular.module('randomImgurApp')
 
 		$scope.loadImages = function() {
 			var count = 0;
-			for (var i = 0; i < 50; i++) {
+			for (var i = 0; i < 52; i++) {
 				$scope.testImage();
 			}
 		};
@@ -29,8 +29,8 @@ angular.module('randomImgurApp')
 			test.src = url;
 			test.onload = function() {
 				var width = test.width;
-				console.log(width);
-				if (width === 161 || width === 24 || width === 162) {
+				var height = test.height;
+				if (width === 161 || width <= 24 || width === 162 || height < 20 ) {
 					$scope.testImage();
 					$scope.removed = $scope.removed + 1;
 				}
@@ -43,6 +43,16 @@ angular.module('randomImgurApp')
 		}
 
 		$scope.loadImages();
+
+		angular.element($window).bind("scroll", function() {
+		    var windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+		    var body = document.body, html = document.documentElement;
+		    var docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
+		    var windowBottom = windowHeight + window.pageYOffset;
+		    if (windowBottom >= docHeight) {
+		       $scope.loadImages();
+		    }
+		});
 
 
 
