@@ -9,6 +9,14 @@ body {
 	font-family: 'Montserrat', sans-serif;
 }
 
+body > div {
+	margin-top: 100px;
+}
+
+p {
+	color: white;
+}
+
 /* NAVBAR */
 
 nav {
@@ -16,6 +24,8 @@ nav {
 	width: 100%;
 	position: fixed;
 	z-index: 100;
+	top: 0;
+	height: 40px;
 }
 
 nav ul {
@@ -57,19 +67,35 @@ img {
 
 
 .imgwrap {
-	height: 400px;
 	margin-top: 40px;
 	float: left;
 	width: 23%;
 	margin-right: 2%;
+	padding: 10px;
+	background: #3f3f3f;
+	-webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.75);}
+
+.imgwrap:nth-of-type(4n+1) {
+	clear: both;
 }
 
-.imgwrap p {
+.imgwrap > p {
+	width: 100%;
+	font-size: 12px;
+	float: right;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.imgwrap .text p {
 	float: right;
 	color: #F07A0D;
 	font-size: 24px;
 	letter-spacing: 1px;
 }
+
 
 .imgwrap img {
 	max-height: 350px;
@@ -81,6 +107,11 @@ img {
 	display: block;
 	cursor: pointer;
 	float: left;
+}
+
+.imgwrap > a {
+	display: block;
+	width: 100%;
 }
 
 i:hover {

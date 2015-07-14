@@ -5,9 +5,11 @@
 			<a href = "{{url}}">
 				<img imageonload src = "{{url}}">
 			</a>
-			<i class="fa fa-heart fa-3x fav" data = "{{url}}"></i>
-			<p>#{{$index + 1}}</p>
-			{{removed}}
+			<div class = "text">
+				<i class="fa fa-heart fa-3x fav" data = "{{url}}"></i>
+				<p>#{{$index + 1}}</p>
+			</div><!--text-->
+			<p>{{url}}</p>
 		</div><!--imgwrap three columns-->
 	</div><!--row-->
 	<div class = "row loading">

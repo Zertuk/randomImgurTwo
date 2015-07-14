@@ -4,6 +4,7 @@ angular.module('randomImgurApp')
 	.controller('MainCtrl', function ($scope, $http, $window) {
 		$scope.randomImgur = {};
 		$scope.imageArray = [];
+		$scope.urlArray = [];
 		$scope.removed = 0;
 
 		$scope.generateURL = function() {
@@ -24,7 +25,8 @@ angular.module('randomImgurApp')
 			}
 		};
 		$scope.testImage = function() {
-			var url = 'http://i.imgur.com/' + $scope.generateURL() + '.png';
+			var generated = $scope.generateURL();
+			var url = 'http://i.imgur.com/' + generated + '.png';
 			var test = new Image();
 			test.src = url;
 			test.onload = function() {
@@ -36,6 +38,7 @@ angular.module('randomImgurApp')
 				}
 				else {
 					$scope.imageArray.push(test.src)
+					$scope.urlArray.push(generated);
 					$scope.i = $scope.i + 1;
 					$scope.$apply();
 				}
