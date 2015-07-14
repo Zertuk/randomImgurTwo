@@ -3,7 +3,7 @@
 angular.module('randomImgurApp')
 	.controller('MainCtrl', function ($scope, $http, $window) {
 		$scope.randomImgur = {};
-		$scope.urlArray = [];
+		$scope.imageArray = [];
 		$scope.removed = 0;
 
 		$scope.generateURL = function() {
