@@ -40,6 +40,5 @@ angular.module('randomImgurApp')
 				}
 			}
 		}
-
 		$scope.loadImages();
 	});
