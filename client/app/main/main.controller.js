@@ -16,10 +16,14 @@ angular.module('randomImgurApp')
 			}
 			return generatedString;
 		};
+		$scope.loading = true;
 		$scope.loadImages = function() {
-			var count = 0;
-			for (var i = 0; i < 52; i++) {
+			$scope.count = 0;
+			var amount = 52;
+			$scope.loading = true;
+			for (var i = 0; i < amount; i++) {
 				$scope.testImage();
+				console.log(i);
 			}
 		};
 		$scope.testImage = function() {
@@ -29,13 +33,13 @@ angular.module('randomImgurApp')
 			test.onload = function() {
 				var width = test.width;
 				var height = test.height;
+				//this is so that any broken images (161, 162, 24) or short images are removed;
 				if (width === 161 || width <= 24 || width === 162 || height < 20 ) {
 					$scope.testImage();
 					$scope.removed = $scope.removed + 1;
 				}
 				else {
 					$scope.imageArray.push(test.src)
-					$scope.i = $scope.i + 1;
 					$scope.$apply();
 				}
 			}

@@ -1,9 +1,8 @@
-
-<div infinitescroll class = "container">
+<div class = "container" infinite-scroll="loadImages()">
 	<div class = "row">
 		<div ng-repeat = "url in imageArray" class = "imgwrap">
 			<a href = "{{url}}">
-				<img imageonload src = "{{url}}">
+				<img src = "{{url}}">
 			</a>
 			<div class = "text">
 				<i class="fa fa-heart fa-3x fav" data = "{{url}}"></i>
