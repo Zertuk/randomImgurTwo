@@ -19,11 +19,9 @@ angular.module('randomImgurApp')
 		$scope.loading = true;
 		$scope.loadImages = function() {
 			$scope.count = 0;
-			var amount = 52;
 			$scope.loading = true;
-			for (var i = 0; i < amount; i++) {
+			for (var i = 0; i < 52; i++) {
 				$scope.testImage();
-				console.log(i);
 			}
 		};
 		$scope.testImage = function() {

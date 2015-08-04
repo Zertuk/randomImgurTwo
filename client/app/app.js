@@ -21,6 +21,7 @@ angular.module('randomImgurApp', [
 				var rectObject = raw.getBoundingClientRect();
 				if (rectObject.bottom === window.innerHeight) {
 					if (angular.element('.imgwrap').length % 52 === 0) {
+						console.log('loading...')
 						$scope.loadImages();
 					}
 				}
