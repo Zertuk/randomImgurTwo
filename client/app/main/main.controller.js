@@ -2,7 +2,6 @@
 
 angular.module('randomImgurApp')
 	.controller('MainCtrl', function ($scope, $http, $window) {
-		$scope.randomImgur = {};
 		$scope.imageArray = [];
 		$scope.removed = 0;
 
@@ -16,14 +15,13 @@ angular.module('randomImgurApp')
 			}
 			return generatedString;
 		};
-		$scope.loading = true;
+
 		$scope.loadImages = function() {
-			$scope.count = 0;
-			$scope.loading = true;
 			for (var i = 0; i < 52; i++) {
 				$scope.testImage();
 			}
 		};
+
 		$scope.testImage = function() {
 			var url = 'http://i.imgur.com/' + $scope.generateURL() + '.png';
 			var test = new Image();
@@ -42,5 +40,6 @@ angular.module('randomImgurApp')
 				}
 			}
 		}
+
 		$scope.loadImages();
 	});
